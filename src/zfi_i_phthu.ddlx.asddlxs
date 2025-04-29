@@ -1,0 +1,113 @@
+@Metadata.layer: #CORE
+@UI: {
+  headerInfo: { typeName: 'Phiếu thu',
+                typeNamePlural: 'Phiếu thu',
+                title: { type: #STANDARD, label: 'Phiếu Thu', value: 'CompanyCode' } },
+  presentationVariant: [{ sortOrder: [{ by: 'CompanyCode', direction:  #DESC }] }] }
+annotate view ZFI_I_PHTHU with
+  parameters
+    @EndUserText.label: 'Own Document Only'
+    @Consumption.defaultValue: 'X'
+    OwnDocumentOnly
+{
+  @UI.facet: [
+  {
+   id: 'Header',
+   purpose: #STANDARD,
+   type: #IDENTIFICATION_REFERENCE,
+   label: 'Header',
+   position: 10
+  },
+  {
+   id: 'Item',
+   purpose: #STANDARD,
+   type: #LINEITEM_REFERENCE,
+   label: 'Item',
+   position: 20,
+   targetElement: '_Item'
+  }
+  ]
+  @UI: {  lineItem:       [ { position: 10, label: 'Document number' } ],
+       identification: [ { position: 10 , label: 'Document number'} ],
+       selectionField: [ { position: 50 } ] }
+  AccountingDocument;
+  @UI: {  lineItem:       [ { position: 20, label: 'Reference' } ],
+    identification: [ { position: 20 , label: 'Reference'} ],
+    selectionField: [ { position: 60 } ] }
+  Reference;
+  @UI: {  lineItem:       [ { position: 30, label: 'Created By'} ],
+     identification: [ { position: 30 , label: 'Created By'} ] }
+  @Consumption.filter.hidden: true
+  AccountingDocCreatedByUser;
+  @UI: {  lineItem:       [ { position: 40, label: 'Document Date' } ],
+     identification: [ { position: 40 , label: 'Document Date'} ] }
+  @Consumption.filter.hidden: true
+  DocumentDate;
+  @UI: {  lineItem:       [ { position: 50, label: 'Posting Date' } ],
+     identification: [ { position: 50 , label: 'Posting Date'} ],
+     selectionField: [ { position: 40 } ] }
+  PostingDate;
+  @UI: {  lineItem:       [ { position: 60, label: 'Entered On' } ],
+     identification: [ { position: 60 , label: 'Entered On'} ],
+     selectionField: [ { position: 40 } ] }
+  AccountingDocumentCreationDate;
+  @UI: {  lineItem:       [ { position: 70, label: 'Amount in Company Code Currency' } ],
+     identification: [ { position: 70 , label: 'Amount in Company Code Currency'} ] }
+  @Consumption.filter.hidden: true
+  AmountInCompanyCodeCurrency;
+  @UI: {  lineItem:       [ { position: 80, label: 'Company Code Currency' } ],
+     identification: [ { position: 80 , label: 'Company Code Currency'} ] }
+  @Consumption.filter.hidden: true
+  CompanyCodeCurrency;
+//  @UI: {  lineItem:       [ { position: 90, label: 'Supplier' } ],
+//     identification: [ { position: 90 , label: 'Supplier'} ] }
+//  @Consumption.filter.hidden: true
+//  supplier;
+//  @UI: {  lineItem:       [ { position: 100, label: 'Customer' } ],
+//     identification: [ { position: 100 , label: 'Customer'} ] }
+//  @Consumption.filter.hidden: true
+//  customer;
+  @UI: {  lineItem:       [ { position: 110, label: 'Account name' } ],
+     identification: [ { position: 110 , label: 'Account name'} ] }
+  @Consumption.filter.hidden: true
+  AccountName;
+  @UI: {  lineItem:       [ { position: 120, label: 'Text' } ],
+     identification: [ { position: 120 , label: 'Text'} ] }
+  @Consumption.filter.hidden: true
+  DocumentItemText;
+  @UI: {  lineItem:       [ { position: 130, label: 'Company Code' } ],
+     identification: [ { position: 130 , label: 'Company Code'} ],
+     selectionField: [ { position: 10 } ]  }
+  CompanyCode;
+  @UI: {  lineItem:       [ { position: 140, label: 'Fiscal Year' } ],
+     identification: [ { position: 140 , label: 'Fiscal Year'} ] ,
+     selectionField: [ { position: 20 } ] }
+  FiscalYear;
+  @UI: {  lineItem:       [ { position: 150, label: 'Document Type' } ],
+     identification: [ { position: 150 , label: 'Document Type'} ] }
+  @Consumption.filter.hidden: true
+  AccountingDocumentType;
+  @UI: {   selectionField: [ { position: 70 } ] }
+  Type;
+  //    @Consumption.defaultValue: 'X'
+  @UI.hidden: true
+  IsReversed;
+  @UI: {  lineItem:       [ { position: 120, label: 'SoTienBangChu' } ],
+     identification: [ { position: 160 , label: 'SoTienBangChu'} ] }
+  @Consumption.filter.hidden: true
+  sotienbangchu;
+  @UI: {  lineItem:       [ { position: 120, label: 'SoTienDaNhanBangChu' } ],
+     identification: [ { position: 170 , label: 'SoTienDaNhanBangChu'} ] }
+  @Consumption.filter.hidden: true
+  sotiendanhanbangchu;
+  
+  @UI: {  lineItem:  [ { position: 130, label: 'Địa Chỉ' } ],
+     identification: [ { position: 180 , label: 'Địa Chỉ'} ] }
+  @Consumption.filter.hidden: true
+  DiaChi;
+  
+  @UI: {  lineItem:  [ { position: 140, label: 'Họ Và Tên' } ],
+     identification: [ { position: 190 , label: 'Họ Và Tên'} ] }
+  @Consumption.filter.hidden: true
+  HoVaTen;
+}

@@ -1,0 +1,5 @@
+@EndUserText.label: 'Phiếu thu FI'
+define service ZFI_I_PHTHU {
+  expose ZFI_I_PHTHU;
+  expose ZFI_I_PHTHU_ITEM;
+}

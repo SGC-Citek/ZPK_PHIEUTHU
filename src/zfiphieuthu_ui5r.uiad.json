@@ -1,0 +1,34 @@
+{
+  "formatVersion": "1",
+  "header": {
+    "description": "Phiếu Thu",
+    "originalLanguage": "en",
+    "abapLanguageVersion": "cloudDevelopment"
+  },
+  "generalInformation": {
+    "appType": "ui5",
+    "catalogId": "SAP_TC_UI5_REPO_UIAD"
+  },
+  "ui5AppDetails": {
+    "appId": "zfiphthu"
+  },
+  "navigation": {
+    "targetMappingId": "UI5R_71DDE3F427B691309A0EB9B3DC9920F24A9242D2_TM",
+    "semanticObject": "zfiphthu",
+    "action": "print",
+    "desktop": true,
+    "tablet": true,
+    "phone": true
+  },
+  "tiles": [
+    {
+      "id": "UI5R_71DDE3F427B691309A0EB9B3DC9920F24A9242D2_AL",
+      "tileType": "static",
+      "isDefault": true,
+      "standard": {
+        "title": "Phiếu Thu",
+        "subtitle": "ZCM01"
+      }
+    }
+  ]
+}
